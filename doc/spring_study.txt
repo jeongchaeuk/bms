@@ -1,0 +1,91 @@
+2020-10-27
+-------------
+Node.js 12.19 설치
+
+> npm install create-react-app -g
+
+> create-react-app --version
+4.0.0
+
+> create-react-app react01 // react01 프로젝트 생성.
+
+2020-10-28
+-------------
+1. 크롬 확장 프로그램
+Talend API Tester - Free Edition
+
+2. 'Lombok' from maven repository
+download lombok.jar 1.18.16
+설치
+java -jar lombok.jar
+STS 실행파일 경로를 선택해서 설치한다.
+
+Project Lombok » 1.18.12
+기능:
+getter/setter/생성자/toString 을 자동으로 생성해 준다.
+VO 클래스에 멤버 변수만 적고
+import lombok.Data
+@Data
+위 코드를 클래스에 지정한다.
+
+gradle 보기(참고)
+
+3. JPA
+- ORM으로 DB 정보를 객체지향으로 손쉽게 도와주는 도구
+- 쿼리에 집중하기 보다는 객체에 집중.
+
+4. Entity
+- DB 테이블의 클래스
+- JPA에서는 테이블을 자동으로 생성해주는 기능
+
+2020-10-29
+--------------
+DB
+table : member, board
+sequence : mbmer_seq, board_seq
+
+STS
+new > Spring starter project
+
+MVC 개발 순서
+1. Controller
+2. View
+3. Model
+4. Repository or Mapper
+
+html5 시맨틱 태그
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
