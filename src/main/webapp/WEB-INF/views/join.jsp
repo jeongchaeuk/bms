@@ -15,10 +15,10 @@
 <script>
 	$(document).ready(function() {
 
-		$('#userid_dup').hide();
-		$('#userid_uniq').hide();
-		$('#userpw_ne').hide();
-		$('#userpw_eq').hide();
+		$('#userid-dup').hide();
+		$('#userid-uniq').hide();
+		$('#userpw-ne').hide();
+		$('#userpw-eq').hide();
 
 	}); // ready
 </script>
@@ -27,7 +27,7 @@
 <body>
 	<header>Header</header>
 	<hr />
-	<nav class="navbar navbar-expand-lg bg-light">
+	<nav class="navbar navbar-expand bg-light">
 		<a class='navbar-brand' href='${pageContext.request.contextPath}/home'>BMS</a>
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav mr-auto">
@@ -38,14 +38,14 @@
 	<section>
 		<article class='container'>
 			<div class='row'>
-				<div class='col-sm-3'>
+				<div class='col-sm-6'>
 					<form role='form' method="post" action="${pageContext.request.contextPath}/member/join">
 						<div class='form-group'>
 							<label for='userid'>아이디</label>
 							<input class='form-control' type='text' id='userid' name='userid' placeholder="아이디를 입력하세요." />
 						</div>
-						<div class='alert alert-danger' id='userid_dup'>중복된 아이디 입니다.</div>
-						<div class='alert alert-success' id='userid_uniq'>사용 가능한 아이디 입니다.</div>
+						<div class='alert alert-danger' id='userid-dup'>중복된 아이디 입니다.</div>
+						<div class='alert alert-success' id='userid-uniq'>사용 가능한 아이디 입니다.</div>
 						<div class='form-group'>
 							<label for='userpw'>비밀번호</label>
 							<input class='form-control' type='password' id='userpw' name='userpw' placeholder="비밀번호를 입력하세요." />
@@ -54,8 +54,8 @@
 							<label for='userpw-check'>비밀번호 확인</label>
 							<input class='form-control' type='password' id='userpw-check' placeholder="비밀번호를 입력하세요." />
 						</div>
-						<div class='alert alert-danger' id='userpw_ne'>비밀번호가 일치하지 않습니다.</div>
-						<div class='alert alert-success' id='userpw_eq'>비밀번호가 일치합니다.</div>
+						<div class='alert alert-danger' id='userpw-ne'>비밀번호가 일치하지 않습니다.</div>
+						<div class='alert alert-success' id='userpw-eq'>비밀번호가 일치합니다.</div>
 						<div class='form-group'>
 							<label for='username'>이름</label>
 							<input class='form-control' type='text' id='username' name='username' placeholder="이름을 입력하세요." />
@@ -64,15 +64,39 @@
 							<label for='userid'>전화번호</label>
 							<input class='form-control' type="tel" id='userphone' name='userphone' placeholder="전화번호를 입력하세요." />
 						</div>
-<!-- 						<div class='form-group'> -->
-<!-- 							<label for='create_at'>가입일</label> -->
-<!-- 							<input class='form-control' type='date' id='created_at' name='created_at' placeholder="가입일을 입력하세요." /> -->
-<!-- 						</div> -->
+						<!-- 						<div class='form-group'> -->
+						<!-- 							<label for='create_at'>가입일</label> -->
+						<!-- 							<input class='form-control' type='date' id='created_at' name='created_at' placeholder="가입일을 입력하세요." /> -->
+						<!-- 						</div> -->
 						<div class='form-group text-center'>
-							<button type="submit" class="btn btn-primary" id='join-submit'>회원 가입</button>
+							<button type="submit" class="btn btn-primary" id='join-submit' disabled='disabled'>회원 가입</button>
 							<a type='button' class='btn btn-warning' href='${pageContext.request.contextPath}/home'>가입 취소</a>
 						</div>
 					</form>
+					<script>
+						$(function() {
+
+							$('input').keyup(function() {
+
+								var pw1 = $('#userpw').val();
+								var pw2 = $('#userpw-check').val();
+
+								if (pw1 != '' && pw2 != '') {
+									if (pw1 == pw2) {
+										$('#userpw-eq').show();
+										$('#userpw-ne').hide();
+										$('#join-submit').removeAttr('disabled');
+									} else {
+										$('#userpw-eq').hide();
+										$('#userpw-ne').show();
+										$('#join-submit').attr('disabled', 'disabled');
+									}
+								}
+
+							});
+
+						});
+					</script>
 				</div>
 			</div>
 		</article>

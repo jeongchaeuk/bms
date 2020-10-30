@@ -17,7 +17,7 @@
 <body>
 	<header>Header</header>
 	<hr />
-	<nav class="navbar navbar-expand-lg bg-light">
+	<nav class="navbar navbar-expand bg-light">
 		<a class='navbar-brand' href='${pageContext.request.contextPath}/home'>BMS</a>
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav mr-auto">

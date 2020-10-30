@@ -15,19 +15,20 @@
 <title>BMS HOME</title>
 </head>
 <body>
-	<header> Header </header>
+	<header>Header</header>
 	<hr />
-	<nav class="navbar navbar-expand-lg bg-light">
+	${sessionScope}
+	<nav class="navbar navbar-expand bg-light">
 		<a class='navbar-brand' href='${pageContext.request.contextPath}/home'>BMS</a>
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav mr-auto">
 				<c:if test="${sessionScope.USERID_SESSION eq nll}">
-					<li class="nav-item"><a class="nav-link" href="#">로그인</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/login">로그인</a></li>
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/join">회원가입</a></li>
 				</c:if>
 				<c:if test="${sessionScope.USERID_SESSION ne nll}">
-					<li class="nav-item"><a class="nav-link" href="#">로그아웃</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">게시판</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/logout">로그아웃</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/board/list">게시판</a></li>
 				</c:if>
 			</ul>
 		</div>
