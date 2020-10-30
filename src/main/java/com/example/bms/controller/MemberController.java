@@ -1,7 +1,7 @@
 package com.example.bms.controller;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
+//import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.bms.entity.Member;
 import com.example.bms.repository.MemberRepository;

@@ -29,7 +29,7 @@ public class Member {
 	private String userpw;
 	private String userphone;
 	
-	// spring이 DB의 created_at 로 매핑 시켜준다. camel <-> snake
+	// Spring JPA만 DB의 created_at로 자동으로 매핑 시켜준다. camel <-> snake
 	private LocalDateTime createdAt; 
 	private String createdBy;
 }
