@@ -29,7 +29,7 @@
 	<section>
 		<article>
 			<div class='container'>
-				<form class='form-inline' role='form' method='get' action='${pageContext.request.contextPath}/notice/list'>
+				<form class='form-inline' role='form' method='post' action='${pageContext.request.contextPath}/notice/list'>
 					<input class='form-control form-control-sm mb-1' type='text' name='search' placeholder="검색어를 입력하세요." />
 					<input class='btn btn-sm btn-primary ml-2 mb-1' type='submit' value='검색' />
 				</form>

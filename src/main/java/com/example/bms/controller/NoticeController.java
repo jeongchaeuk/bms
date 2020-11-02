@@ -37,6 +37,20 @@ public class NoticeController {
 
 		return "/notice/list";
 	}
+	
+	@PostMapping(value = { "/list" })
+	public String list(HttpServletRequest request ,@RequestParam(value = "search", defaultValue = "") String search ,Model model) {
+		System.out.println("notice-list-post");
+		if ("".equals(search))
+			return "redirect:"+request.getContextPath()+"/notice/list";
+		
+		List<Notice> list = repo.findByTitleContaining(search);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("count", list.size());
+		
+		return "/notice/list";
+	}
 
 	@GetMapping(value = { "/write" })
 	public String write() {
