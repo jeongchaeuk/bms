@@ -45,7 +45,8 @@
 					</div>					
 					<div class="form-group">
 						<label for="createdAt">작성일</label>
-						<input class='form-control input-md' type='text' id='createdAt' name='createdAt' readonly />
+<!-- 						<input class='form-control input-md' type='text' id='createdAt' name='createdAt' readonly /> -->
+						<input class='form-control input-md' type='text' id='createdAt' readonly />
 					</div>
 					<div class="form-group">
 						<label for="createdBy">작성자</label>
@@ -53,7 +54,8 @@
 					</div>
 					<div class="form-group">
 						<label for="modifiedAt">수정일</label>
-						<input class='form-control input-md' type='text' id='modifiedAt' name='modifiedAt' readonly />
+<!-- 						<input class='form-control input-md' type='text' id='modifiedAt' name='modifiedAt' readonly /> -->
+						<input class='form-control input-md' type='text' id='modifiedAt' readonly />
 					</div>
 					<div class="form-group">
 						<label for="modifiedBy">수정자</label>
