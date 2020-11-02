@@ -95,7 +95,10 @@ public class NoticeController {
 		
 //		notice.setModifiedAt(Timestamp.valueOf(LocalDateTime.now()));
 		
-		System.out.println(notice);
+		// 생성시간이 업데이트때 삭제되는 버그.
+		// 이전 값을 다시 설정하는것으로 해결.
+		Optional<Notice> old = repo.findById(notice.getId());
+		notice.setCreatedAt(old.get().getCreatedAt());
 		
 		repo.save(notice);
 

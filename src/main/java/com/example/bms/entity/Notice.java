@@ -37,12 +37,10 @@ public class Notice {
 	
 	@CreatedDate
 	private LocalDateTime createdAt;
-//	private Timestamp createdAt;
 	private String createdBy;
 
 	@LastModifiedDate
 	private LocalDateTime modifiedAt;
-//	private Timestamp modifiedAt;
 	private String modifiedBy;
 
 }
