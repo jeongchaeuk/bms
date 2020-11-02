@@ -22,6 +22,7 @@
 		<a class='navbar-brand' href='${pageContext.request.contextPath}/home'>BMS</a>
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/notice/list">공지사항</a></li>
 				<c:if test="${sessionScope.USERID_SESSION eq nll}">
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/login">로그인</a></li>
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/join">회원가입</a></li>

@@ -64,10 +64,6 @@
 							<label for='userid'>전화번호</label>
 							<input class='form-control' type="tel" id='userphone' name='userphone' placeholder="전화번호를 입력하세요." />
 						</div>
-						<!-- 						<div class='form-group'> -->
-						<!-- 							<label for='create_at'>가입일</label> -->
-						<!-- 							<input class='form-control' type='date' id='created_at' name='created_at' placeholder="가입일을 입력하세요." /> -->
-						<!-- 						</div> -->
 						<div class='form-group text-center'>
 							<button type="submit" class="btn btn-primary" id='join-submit' disabled='disabled'>회원 가입</button>
 							<a type='button' class='btn btn-warning' href='${pageContext.request.contextPath}/home'>가입 취소</a>
@@ -78,41 +74,29 @@
 
 							$('input[name=userid]').keyup(function(){
 								var userid = $(this).val();
-								alert(userid);
-								if (userid != "") {
+								if (userid == "") {
+									$('#userid-dup').hide();
+									$('#userid-uniq').hide();
+									$('#join-submit').attr('disabled', 'disabled');
+								} else {
 									$.post("/rest/checkUserId.json",
-											{userid:userid},
-											function(data) {
+											{ userid : userid },
+											function (data) {
 												if (data.dup == 0) {
 		 											$('#userid-dup').hide();
 		 											$('#userid-uniq').show();
+		 											$('#join-submit').removeAttr('disabled');
 												} else {
 		 											$('#userid-dup').show();
 		 											$('#userid-uniq').hide();
+		 											$('#join-submit').attr('disabled', 'disabled');
 												}
 											}, 
 											'json');
 								}
 							});
-
-// 							$('input[name=userid]').on('keyup', function(event) {
-// 								var userid = $(this).val();
-// 								if (userid.length > 0) {
-// 									$.post("/rest/checkUserId.json", {userid:userid}, 
-// 											function(result) { 
-// 										if (result.dup == 1) {
-// 											$('#userid-dup').show();
-// 											$('#userid-uniq').hide();
-// 													} else {
-// 														$('#userid-dup').hide();
-// 														$('#userid-uniq').show();
-																	 
-// 														});
-// 								}
-// 							});
 							
 							$('input').keyup(function() {
-
 								var pw1 = $('#userpw').val();
 								var pw2 = $('#userpw-check').val();
 
