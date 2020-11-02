@@ -22,7 +22,7 @@
 		<a class='navbar-brand' href='${pageContext.request.contextPath}/home'>BMS</a>
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">공지사항<span class="badge badge-secondary">${count}</span></li>
+				<li class="nav-item">공지사항<span class="badge badge-secondary ml-1">${count}</span></li>
 			</ul>
 		</div>
 	</nav>
@@ -30,8 +30,8 @@
 		<article>
 			<div class='container'>
 				<form class='form-inline' role='form' method='get' action='${pageContext.request.contextPath}/notice/list'>
-					<input class='form-control input-md' type='text' name='search' placeholder="검색어를 입력하세요." />
-					<input class='btn btn-primary' type='submit' value='검색' />
+					<input class='form-control form-control-sm mb-1' type='text' name='search' placeholder="검색어를 입력하세요." />
+					<input class='btn btn-sm btn-primary ml-2 mb-1' type='submit' value='검색' />
 				</form>
 				<div id='notice-main'>
 					<table class='table table-sm table-hover'>

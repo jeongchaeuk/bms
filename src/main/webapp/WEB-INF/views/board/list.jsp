@@ -30,8 +30,8 @@
 		<article>
 			<div class='container'>
 				<form class='form-inline' role='form' method='get' action='${pageContext.request.contextPath}/board/list'>
-					<input class='form-control input-md' type='text' name='search' placeholder="검색어를 입력하세요." />
-					<input class='btn btn-primary' type='submit' value='검색' />
+					<input class='form-control form-control-sm mb-1' type='text' name='search' placeholder="검색어를 입력하세요." />
+					<input class='btn btn-sm btn-primary ml-2 mb-1' type='submit' value='검색' />				
 				</form>
 				<div id='board-main'>
 					<table class='table table-sm table-hover'>

@@ -62,7 +62,7 @@
 					</div>
 					<div class='form-group'>
 						<c:if test='${sessionScope.USERID_SESSION eq notice.createdBy}'>
-						<button type='submit' class='btn btn-danger'>삭제하기</button>						
+							<button type='submit' class='btn btn-danger'>삭제하기</button>						
 						</c:if>
 						<button type='submit' class='btn btn-primary'>수정하기</button>
 						<a class='btn btn-warning' href='${pageContext.request.contextPath}/notice/list'>취소</a>
