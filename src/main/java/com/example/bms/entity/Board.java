@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -45,6 +46,9 @@ public class Board {
 	// Spring JPA만 DB의 created_at로 자동으로 매핑 시켜준다. camel <-> snake
 //	private LocalDateTime createdAt;
 //	private String createdBy;
+	
+	@UpdateTimestamp
+	private Timestamp mod_date;
 
 }
 

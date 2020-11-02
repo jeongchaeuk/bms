@@ -10,7 +10,7 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 <!-- jQuery and Bootstrap Bundle (includes Popper) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 <title>BMS Board</title>
 </head>
@@ -34,7 +34,7 @@
 					<input class='btn btn-primary' type='submit' value='검색' />
 				</form>
 				<div id='board-main'>
-					<table class='table table-hover'>
+					<table class='table table-sm table-hover'>
 						<thead>
 							<tr>
 								<th></th>
@@ -43,7 +43,8 @@
 								<th>내용</th>
 								<th>작성자</th>
 								<th>조회수</th>
-								<th>날짜</th>
+								<th>작성일</th>
+								<th>수정일</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -51,11 +52,12 @@
 								<tr>
 									<th>${st.count}</th>
 									<td>${board.brd_id}</td>
-									<td>${board.brd_title}</td>
+									<td><a href='${pageContext.request.contextPath}/board/content?id=${board.brd_id}'>${board.brd_title}</a></td>
 									<td>${board.brd_content}</td>
 									<td>${board.reg_userid}</td>
 									<td>${board.brd_hit}</td>
 									<td>${board.reg_date}</td>
+									<td>${board.mod_date}</td>
 								</tr>
 							</c:forEach>
 						</tbody>

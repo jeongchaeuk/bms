@@ -10,7 +10,7 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 <!-- jQuery and Bootstrap Bundle (includes Popper) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 	$(document).ready(function() {
@@ -76,6 +76,41 @@
 					<script>
 						$(function() {
 
+							$('input[name=userid]').keyup(function(){
+								var userid = $(this).val();
+								alert(userid);
+								if (userid != "") {
+									$.post("/rest/checkUserId.json",
+											{userid:userid},
+											function(data) {
+												if (data.dup == 0) {
+		 											$('#userid-dup').hide();
+		 											$('#userid-uniq').show();
+												} else {
+		 											$('#userid-dup').show();
+		 											$('#userid-uniq').hide();
+												}
+											}, 
+											'json');
+								}
+							});
+
+// 							$('input[name=userid]').on('keyup', function(event) {
+// 								var userid = $(this).val();
+// 								if (userid.length > 0) {
+// 									$.post("/rest/checkUserId.json", {userid:userid}, 
+// 											function(result) { 
+// 										if (result.dup == 1) {
+// 											$('#userid-dup').show();
+// 											$('#userid-uniq').hide();
+// 													} else {
+// 														$('#userid-dup').hide();
+// 														$('#userid-uniq').show();
+																	 
+// 														});
+// 								}
+// 							});
+							
 							$('input').keyup(function() {
 
 								var pw1 = $('#userpw').val();
