@@ -1,12 +1,17 @@
 package com.example.bms.entity;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +23,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 @Entity
+@EntityListeners(AuditingEntityListener.class) // date
 public class Notice {
 	
 	@Id
@@ -29,12 +35,14 @@ public class Notice {
 	private String content;
 	private char yn;
 	
-//	private LocalDateTime createdAt;
-	private Timestamp createdAt;
+	@CreatedDate
+	private LocalDateTime createdAt;
+//	private Timestamp createdAt;
 	private String createdBy;
-	
-	private Timestamp modifiedAt;
-//	private LocalDateTime modifiedAt;
+
+	@LastModifiedDate
+	private LocalDateTime modifiedAt;
+//	private Timestamp modifiedAt;
 	private String modifiedBy;
 
 }

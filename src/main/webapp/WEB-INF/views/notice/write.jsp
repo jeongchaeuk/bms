@@ -42,10 +42,11 @@
 					  <input type='hidden' name='yn' id='yn' value='n' />
 					  <input class="form-check-input" type="checkbox" id="check-yn">
 					  <label class="form-check-label" for="check-yn">공지여부</label>
-					</div>					
-					<div class="form-group">
+					</div>
+					<input type="hidden" name='createdBy' value = '${sessionScope.USERID_SESSION}' />
+					
+<!--  					<div class="form-group">
 						<label for="createdAt">작성일</label>
-<!-- 						<input class='form-control input-md' type='text' id='createdAt' name='createdAt' readonly /> -->
 						<input class='form-control input-md' type='text' id='createdAt' readonly />
 					</div>
 					<div class="form-group">
@@ -54,17 +55,16 @@
 					</div>
 					<div class="form-group">
 						<label for="modifiedAt">수정일</label>
-<!-- 						<input class='form-control input-md' type='text' id='modifiedAt' name='modifiedAt' readonly /> -->
 						<input class='form-control input-md' type='text' id='modifiedAt' readonly />
 					</div>
 					<div class="form-group">
 						<label for="modifiedBy">수정자</label>
 						<input class='form-control input-md' type='text' id='modifiedBy' name='modifiedBy' value = '${sessionScope.USERID_SESSION}' readonly />
-					</div>
+					</div> -->
 					<div class='form-group'>
 						<button type='submit' class='btn btn-primary'>글쓰기</button>
 						<a class='btn btn-warning' href='${pageContext.request.contextPath}/notice/list'>취소</a>
-					</div>
+					</div> 
 				</form>
 			</div>
 		</article>

@@ -63,7 +63,7 @@ public class NoticeController {
 		System.out.println("notice-write-post");
 		System.out.println(notice);
 		
-		notice.setCreatedAt(Timestamp.valueOf(LocalDateTime.now())).setModifiedAt(Timestamp.valueOf(LocalDateTime.now()));
+//		notice.setCreatedAt(Timestamp.valueOf(LocalDateTime.now())).setModifiedAt(Timestamp.valueOf(LocalDateTime.now()));
 		
 		repo.save(notice);
 
@@ -93,7 +93,7 @@ public class NoticeController {
 		System.out.println("notice-content-post");
 		System.out.println(notice);
 		
-		notice.setModifiedAt(Timestamp.valueOf(LocalDateTime.now()));
+//		notice.setModifiedAt(Timestamp.valueOf(LocalDateTime.now()));
 		
 		System.out.println(notice);
 		
@@ -102,5 +102,14 @@ public class NoticeController {
 		return "redirect:" + request.getContextPath() + "/notice/list";
 	}
 	
+	@GetMapping(value = { "/delete" })
+	public String delete(HttpServletRequest request, @RequestParam(value = "id", defaultValue = "0") Long id) {
+		System.out.println("notice-delete-get");
+		
+		if (id != 0)
+			repo.deleteById(id);
+		
+		return "redirect:" + request.getContextPath() + "/notice/list";
+	}
 
 }
