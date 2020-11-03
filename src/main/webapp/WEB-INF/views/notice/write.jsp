@@ -25,23 +25,6 @@
 						<label for="createdBy">작성자</label>
 						<input class='form-control input-md' type='text' id='createdBy' value = '${sessionScope.USERID_SESSION}' readonly />
 					</div>
-					
-<!--  					<div class="form-group">
-						<label for="createdAt">작성일</label>
-						<input class='form-control input-md' type='text' id='createdAt' readonly />
-					</div>
-					<div class="form-group">
-						<label for="createdBy">작성자</label>
-						<input class='form-control input-md' type='text' id='createdBy' name='createdBy' value = '${sessionScope.USERID_SESSION}' readonly />
-					</div>
-					<div class="form-group">
-						<label for="modifiedAt">수정일</label>
-						<input class='form-control input-md' type='text' id='modifiedAt' readonly />
-					</div>
-					<div class="form-group">
-						<label for="modifiedBy">수정자</label>
-						<input class='form-control input-md' type='text' id='modifiedBy' name='modifiedBy' value = '${sessionScope.USERID_SESSION}' readonly />
-					</div> -->
 					<div class='form-group mt-2'>
 						<button type='submit' class='btn btn-primary'>글쓰기</button>
 						<a class='btn btn-warning' href='${pageContext.request.contextPath}/notice/list'>취소</a>
