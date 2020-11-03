@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="true"%>
 <%@ include file="../include/header.jsp" %>
-<h1 class='display-4' style='font-size:2rem'>공지사항<sub><span class="badge badge-secondary ml-1">${count}</span></sub></h1>
+<h1 class='display-4' style='font-size:2rem'>공지사항<span class="badge badge-info ml-1">${count}</span></h1>
 <hr />
 	<section>
 		<article>
@@ -12,9 +12,9 @@
 				</form>
 				<div id='notice-main'>
 					<table class='table table-sm table-hover'>
-						<thead>
+						<thead class="thead-dark">
 							<tr>
-								<th></th>
+								<th>#</th>
 								<th>번호</th>
 								<th>제목</th>
 								<th>내용</th>
