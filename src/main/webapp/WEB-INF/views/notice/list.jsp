@@ -1,31 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="true"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<!-- Required meta tags -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-<!-- jQuery and Bootstrap Bundle (includes Popper) -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-<title>BMS 공지사항</title>
-</head>
-<body>
-	<header>Header</header>
+<%@ include file="../include/header.jsp" %>
+	<h1 class='display-4' style='font-size:2rem'>공지사항<sub><span class="badge badge-secondary ml-1">${count}</span></sub></h1>
 	<hr />
-	${sessionScope}
-	<nav class="navbar navbar-expand bg-light">
-		<a class='navbar-brand' href='${pageContext.request.contextPath}/home'>BMS</a>
-		<div class="collapse navbar-collapse">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">공지사항<span class="badge badge-secondary ml-1">${count}</span></li>
-			</ul>
-		</div>
-	</nav>
 	<section>
 		<article>
 			<div class='container'>
@@ -73,7 +50,4 @@
 			</div>
 		</article>
 	</section>
-	<hr />
-	<footer>Footer</footer>
-</body>
-</html>
+<%@ include file="../include/footer.jsp" %>
