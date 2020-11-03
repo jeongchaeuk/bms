@@ -34,5 +34,8 @@
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/board/list">게시판</a></li>
 				</c:if>
 			</ul>
+			<c:if test="${sessionScope.USERID_SESSION ne null}">
+				<a class="nav-link" href="" style='color:gold'>${sessionScope.USERID_SESSION} 님 안녕하세요.</a>
+			</c:if>
 		</div>
 	</nav>
