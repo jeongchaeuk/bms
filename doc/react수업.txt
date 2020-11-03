@@ -1,0 +1,40 @@
+< React >
+
+2020/11/03
+-----------
+react를 하기전
+필수적으로 알아야할 것
+- html5
+- Javascript/JQuery
+- DOM
+- Prototype based language(OOP)
+
+리액트를 보기전에
+- front-end
+    - basic
+        - HTML5, CSS3, Javascript, JQuery, AJAX
+    - further
+        - Angular JS, Bootstrap, ReactJS
+- back-end
+    - Server side
+        - PHP, Node.js, C++, Java, Python, C#
+    - further
+        - Laravel, Express, Spring, Flask, ASP.NET MVC
+
+대표 프론트엔드 라이브러리
+- Angular JS
+- Vue.js
+- React
+
+https://ko.reactjs.org/
+
+create react app
+https://github.com/facebook/create-react-app
+
+Node.js 14.15 설치
+> npm install create-react-app -g
+> create-react-app --version
+4.0.0
+> create-react-app react01 // react01 프로젝트 생성.
+
+chrome 웹스토어 : react developer tools
