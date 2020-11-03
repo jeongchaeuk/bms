@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="true"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="../include/header.jsp" %>
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +26,10 @@
 				<li class="nav-item">공지 쓰기</li>
 			</ul>
 		</div>
-	</nav>
+	</nav> --%>
 	<section>
 		<article>
-			<div class='container-md'>
+			<div class='container text-left'>
 				<form name="form" role='form' method='post' action='${pageContext.request.contextPath}/notice/write'>
 					<div class="form-group">
 						<label for="title">제목</label>
@@ -61,7 +62,7 @@
 						<label for="modifiedBy">수정자</label>
 						<input class='form-control input-md' type='text' id='modifiedBy' name='modifiedBy' value = '${sessionScope.USERID_SESSION}' readonly />
 					</div> -->
-					<div class='form-group'>
+					<div class='form-group mt-2'>
 						<button type='submit' class='btn btn-primary'>글쓰기</button>
 						<a class='btn btn-warning' href='${pageContext.request.contextPath}/notice/list'>취소</a>
 					</div> 
@@ -81,7 +82,4 @@
 		
 	});
 	</script>
-	<hr />
-	<footer>Footer</footer>
-</body>
-</html>
+<%@ include file="../include/footer.jsp" %>
