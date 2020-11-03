@@ -61,8 +61,6 @@ public class NoticeController {
 		System.out.println("notice-write-post");
 		System.out.println(notice);
 		
-//		notice.setCreatedAt(Timestamp.valueOf(LocalDateTime.now())).setModifiedAt(Timestamp.valueOf(LocalDateTime.now()));
-		
 		repo.save(notice);
 
 		return "redirect:" + request.getContextPath() + "/notice/list";
@@ -90,8 +88,6 @@ public class NoticeController {
 	public String content(HttpServletRequest request, @ModelAttribute Notice notice) {
 		System.out.println("notice-content-post");
 		System.out.println(notice);
-		
-//		notice.setModifiedAt(Timestamp.valueOf(LocalDateTime.now()));
 		
 		// 생성시간이 업데이트때 삭제되는 버그.
 		// 이전 값을 다시 설정하는것으로 해결.

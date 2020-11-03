@@ -1,34 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="true"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<!-- Required meta tags -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-<!-- jQuery and Bootstrap Bundle (includes Popper) -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-<title>BMS 공지 보기 및 수정</title>
-</head>
-<body>
-	<header>Header</header>
-	<hr />
-	${sessionScope}
-	<nav class="navbar navbar-expand bg-light">
-		<a class='navbar-brand' href='${pageContext.request.contextPath}/home'>BMS</a>
-		<div class="collapse navbar-collapse">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">공지 보기 / 수정</li>
-			</ul>
-		</div>
-	</nav>
+<%@ include file="../include/header.jsp" %>
+<h1 class='display-4' style='font-size:2rem'>공지 보기/수정하기</h1>
+<hr />
 	<section>
 		<article>
-			<div class='container-md'>
+			<div class='container text-left'>
 				<form name="form" role='form' method='post' action='${pageContext.request.contextPath}/notice/content'>
 				<input type='hidden' name='id' value="${notice.id}" />
 					<div class="form-group">
@@ -47,7 +24,7 @@
 					<div class="form-group">
 						<label for="createdAt">작성일</label>
 <%-- 						<input class='form-control input-md' type='text' id='createdAt' name='createdAt' value="${notice.createdAt}" readonly /> --%>
-						<input class='form-control input-md' type='text' id='createdAt' value="${notice.createdAt}" readonly />
+						<input class='form-control input-md' type='text' id='createdAt' value='${notice.createdAt.toString().replace("T", " ")}' readonly />
 					</div>
 					<div class="form-group">
 						<label for="createdBy">작성자</label>
@@ -56,7 +33,7 @@
 					<div class="form-group">
 						<label for="modifiedAt">수정일</label>
 <%-- 						<input class='form-control input-md' type='text' id='modifiedAt' name='modifiedAt' value="${notice.modifiedAt}" readonly /> --%>
-						<input class='form-control input-md' type='text' id='modifiedAt' value="${notice.modifiedAt}" readonly />
+						<input class='form-control input-md' type='text' id='modifiedAt' value='${notice.modifiedAt.toString().replace("T", " ")}' readonly />
 					</div>
 					<div class="form-group">
 						<label for="modifiedBy">수정자</label>
@@ -94,7 +71,4 @@
 		
 	});
 	</script>
-	<hr />
-	<footer>Footer</footer>
-</body>
-</html>
+<%@ include file="../include/footer.jsp" %>

@@ -12,6 +12,7 @@ import javax.persistence.SequenceGenerator;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,11 +35,13 @@ public class Notice {
 	private String title;
 	private String content;
 	private char yn;
-	
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@CreatedDate
-	private LocalDateTime createdAt;
+	private LocalDateTime createdAt; // java.util.Date 는 DB에 안들어간다고 함 ?
 	private String createdBy;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@LastModifiedDate
 	private LocalDateTime modifiedAt;
 	private String modifiedBy;

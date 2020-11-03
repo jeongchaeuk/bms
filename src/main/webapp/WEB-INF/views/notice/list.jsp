@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="true"%>
 <%@ include file="../include/header.jsp" %>
-	<h1 class='display-4' style='font-size:2rem'>공지사항<sub><span class="badge badge-secondary ml-1">${count}</span></sub></h1>
-	<hr />
+<h1 class='display-4' style='font-size:2rem'>공지사항<sub><span class="badge badge-secondary ml-1">${count}</span></sub></h1>
+<hr />
 	<section>
 		<article>
 			<div class='container'>
@@ -33,9 +33,9 @@
 									<td><a href='${pageContext.request.contextPath}/notice/content?id=${notice.id}'>${notice.title}</a></td>
 									<td>${notice.content}</td>
 									<td>${notice.yn}</td>
-									<td>${notice.createdAt}</td>
+									<td>${notice.createdAt.toString().replace("T", " ")}</td>
 									<td>${notice.createdBy}</td>
-									<td>${notice.modifiedAt}</td>
+									<td>${notice.modifiedAt.toString().replace("T", " ")}</td>
 									<td>${notice.modifiedBy}</td>
 								</tr>
 							</c:forEach>
@@ -50,4 +50,6 @@
 			</div>
 		</article>
 	</section>
-<%@ include file="../include/footer.jsp" %>
+<div class='mt-2'>
+<%@ include file="../include/footer.jsp"%>
+</div>
